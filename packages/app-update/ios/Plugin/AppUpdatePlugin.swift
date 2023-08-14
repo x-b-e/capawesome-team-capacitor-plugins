@@ -17,7 +17,7 @@ public class AppUpdatePlugin: CAPPlugin {
                 guard
                     let info = Bundle.main.infoDictionary,
                     let bundleId = info["CFBundleIdentifier"] as? String,
-                    let currentVersion = info["CFBundleShortVersionString"] as? String,
+                    let currentVersion = info["CFBundleVersion"] as? String,
                     var lookupUrl = URL(string: "https://itunes.apple.com/lookup?bundleId=\(bundleId)&date=\(date)")
                 else {
                     call.reject("Invalid bundle info provided")
